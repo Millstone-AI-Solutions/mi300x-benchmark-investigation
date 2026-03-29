@@ -1,0 +1,151 @@
+# HELP sglang:time_to_first_token_seconds Histogram of time to first token in seconds.
+# TYPE sglang:time_to_first_token_seconds histogram
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.1"} 0.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.2"} 0.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.4"} 0.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.6"} 0.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.8"} 0.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="1.0"} 0.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="2.0"} 7.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="4.0"} 9.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="6.0"} 9.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="8.0"} 9.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="10.0"} 9.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="20.0"} 9.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="40.0"} 9.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="60.0"} 9.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="80.0"} 9.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="100.0"} 9.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="200.0"} 10.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="400.0"} 10.0
+sglang:time_to_first_token_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="+Inf"} 10.0
+sglang:time_to_first_token_seconds_sum{model_name="Qwen3.5-122B-A10B-FP8"} 150.54411149024963
+sglang:time_to_first_token_seconds_count{model_name="Qwen3.5-122B-A10B-FP8"} 10.0
+
+# HELP sglang:e2e_request_latency_seconds Histogram of end to end request latency in seconds.
+# TYPE sglang:e2e_request_latency_seconds histogram
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.1"} 0.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.2"} 0.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.4"} 0.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.6"} 0.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.8"} 0.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="1.0"} 0.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="2.0"} 0.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="4.0"} 1.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="6.0"} 1.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="8.0"} 1.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="10.0"} 1.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="20.0"} 1.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="40.0"} 8.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="60.0"} 8.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="80.0"} 8.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="100.0"} 8.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="200.0"} 9.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="400.0"} 9.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="600.0"} 9.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="1200.0"} 9.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="1800.0"} 9.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="2400.0"} 9.0
+sglang:e2e_request_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="+Inf"} 9.0
+sglang:e2e_request_latency_seconds_sum{model_name="Qwen3.5-122B-A10B-FP8"} 312.62351536750793
+sglang:e2e_request_latency_seconds_count{model_name="Qwen3.5-122B-A10B-FP8"} 9.0
+
+# HELP sglang:queue_time_seconds Histogram of request queue time in seconds.
+# TYPE sglang:queue_time_seconds histogram
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="0.0"} 0.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="0.1"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="0.2"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="0.5"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="1.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="2.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="3.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="4.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="5.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="10.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="15.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="20.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="30.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="40.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="50.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="60.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="70.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="80.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="90.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="100.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="200.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="300.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="400.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="500.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="600.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="700.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="800.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="900.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="1000.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="1200.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="1400.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="1600.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="1800.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="2000.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="2500.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="3000.0"} 12.0
+sglang:queue_time_seconds_bucket{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0",le="+Inf"} 12.0
+sglang:queue_time_seconds_sum{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0"} 0.004099543999473099
+sglang:queue_time_seconds_count{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0"} 12.0
+
+# HELP sglang:generation_tokens_total Number of generation tokens processed.
+# TYPE sglang:generation_tokens_total counter
+sglang:generation_tokens_total{model_name="Qwen3.5-122B-A10B-FP8"} 7226.0
+
+# HELP sglang:prompt_tokens_total Number of prefill tokens processed.
+# TYPE sglang:prompt_tokens_total counter
+sglang:prompt_tokens_total{model_name="Qwen3.5-122B-A10B-FP8"} 7337.0
+
+# HELP sglang:num_requests_total Total number of requests processed.
+# TYPE sglang:num_requests_total counter
+sglang:num_requests_total{model_name="Qwen3.5-122B-A10B-FP8"} 9.0
+
+# HELP sglang:num_running_reqs Number of requests currently running.
+# TYPE sglang:num_running_reqs counter
+sglang:num_running_reqs{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0"} 1.0
+
+# HELP sglang:num_queue_reqs Number of requests waiting in the queue.
+# TYPE sglang:num_queue_reqs counter
+sglang:num_queue_reqs{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0"} 0.0
+
+# HELP sglang:token_usage Current token usage (KV cache).
+# TYPE sglang:token_usage counter
+sglang:token_usage{engine_type="unified",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0"} 0.001706242669588971
+
+# HELP sglang:realtime_tokens_total Realtime token counter with mode labels.
+# TYPE sglang:realtime_tokens_total counter
+sglang:realtime_tokens_total{engine_type="unified",mode="prefill_compute",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0"} 8373.0
+sglang:realtime_tokens_total{engine_type="unified",mode="decode",model_name="Qwen3.5-122B-A10B-FP8",moe_ep_rank="0",pp_rank="0",tp_rank="0"} 8010.0
+
+# HELP sglang:inter_token_latency_seconds Histogram of inter-token latency in seconds.
+# TYPE sglang:inter_token_latency_seconds histogram
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.002"} 0.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.004"} 0.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.006"} 0.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.008"} 0.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.01"} 0.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.015"} 0.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.02"} 0.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.025"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.03"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.035"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.04"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.06"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.08"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.1"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.2"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.4"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.6"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="0.8"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="1.0"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="2.0"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="4.0"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="6.0"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="8.0"} 7518.0
+sglang:inter_token_latency_seconds_bucket{model_name="Qwen3.5-122B-A10B-FP8",le="+Inf"} 7518.0
+sglang:inter_token_latency_seconds_sum{model_name="Qwen3.5-122B-A10B-FP8"} 180.16040349006653
+sglang:inter_token_latency_seconds_count{model_name="Qwen3.5-122B-A10B-FP8"} 7518.0

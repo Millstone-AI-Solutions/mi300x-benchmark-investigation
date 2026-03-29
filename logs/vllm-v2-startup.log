@@ -1,0 +1,218 @@
+docker logs -f vllm-server
+WARNING 03-25 23:16:42 [gpt_oss_triton_kernels_moe.py:59] Using legacy triton_kernels on ROCm
+(APIServer pid=1) INFO 03-25 23:16:44 [utils.py:299] 
+(APIServer pid=1) INFO 03-25 23:16:44 [utils.py:299]        █     █     █▄   ▄█
+(APIServer pid=1) INFO 03-25 23:16:44 [utils.py:299]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.18.1rc1.dev93+gb73b5b062
+(APIServer pid=1) INFO 03-25 23:16:44 [utils.py:299]   █▄█▀ █     █     █     █  model   Qwen/Qwen3.5-122B-A10B-FP8
+(APIServer pid=1) INFO 03-25 23:16:44 [utils.py:299]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+(APIServer pid=1) INFO 03-25 23:16:44 [utils.py:299] 
+(APIServer pid=1) INFO 03-25 23:16:44 [utils.py:233] non-default args: {'model_tag': 'Qwen/Qwen3.5-122B-A10B-FP8', 'host': '0.0.0.0', 'model': 'Qwen/Qwen3.5-122B-A10B-FP8', 'max_model_len': 262144, 'served_model_name': ['Qwen3.5-122B-A10B-FP8'], 'reasoning_parser': 'qwen3', 'language_model_only': True, 'max_num_batched_tokens': 32768}
+(APIServer pid=1) INFO 03-25 23:16:52 [model.py:541] Resolved architecture: Qwen3_5MoeForConditionalGeneration
+(APIServer pid=1) INFO 03-25 23:16:52 [model.py:1645] Using max model len 262144
+(APIServer pid=1) [aiter] start build [module_aiter_enum] under /usr/local/lib/python3.12/dist-packages/aiter/jit/build/module_aiter_enum
+(APIServer pid=1) [aiter] finish build [module_aiter_enum], cost 12.8s 
+(APIServer pid=1) [aiter] import [module_aiter_enum] under /usr/local/lib/python3.12/dist-packages/aiter/jit/module_aiter_enum.so
+(APIServer pid=1) INFO 03-25 23:17:06 [scheduler.py:237] Chunked prefill is enabled with max_num_batched_tokens=32768.
+(APIServer pid=1) INFO 03-25 23:17:06 [config.py:228] Setting attention block size to 2096 tokens to ensure that attention page size is >= mamba page size.
+(APIServer pid=1) INFO 03-25 23:17:06 [config.py:259] Padding mamba page size by 0.58% to ensure that mamba page size and attention page size are exactly equal.
+(APIServer pid=1) INFO 03-25 23:17:06 [vllm.py:753] Asynchronous scheduling is enabled.
+(APIServer pid=1) INFO 03-25 23:17:06 [compilation.py:290] Enabled custom fusions: norm_quant, act_quant
+(APIServer pid=1) INFO 03-25 23:17:08 [registry.py:126] All limits of multimodal modalities supported by the model are set to 0, running in text-only mode.
+WARNING 03-25 23:17:14 [gpt_oss_triton_kernels_moe.py:59] Using legacy triton_kernels on ROCm
+(EngineCore pid=383) INFO 03-25 23:17:15 [core.py:105] Initializing a V1 LLM engine (v0.18.1rc1.dev93+gb73b5b062) with config: model='Qwen/Qwen3.5-122B-A10B-FP8', speculative_config=None, tokenizer='Qwen/Qwen3.5-122B-A10B-FP8', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=262144, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=fp8, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='qwen3', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=Qwen3.5-122B-A10B-FP8, enable_prefix_caching=False, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['+quant_fp8', '+rms_norm', '+quant_fp8', '+grouped_topk', '+rotary_embedding', '+sparse_attn_indexer', 'none', '+quant_fp8'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_images_per_batch': 0, 'compile_sizes': [], 'compile_ranges_endpoints': [32768], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'fuse_act_padding': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore pid=383) INFO 03-25 23:17:16 [registry.py:126] All limits of multimodal modalities supported by the model are set to 0, running in text-only mode.
+(EngineCore pid=383) INFO 03-25 23:17:16 [parallel_state.py:1400] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.18.0.3:55731 backend=nccl
+(EngineCore pid=383) INFO 03-25 23:17:16 [parallel_state.py:1716] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank 0, EPLB rank N/A
+(EngineCore pid=383) [aiter] import [module_aiter_enum] under /usr/local/lib/python3.12/dist-packages/aiter/jit/module_aiter_enum.so
+(EngineCore pid=383) INFO 03-25 23:17:17 [topk_topp_sampler.py:81] Using aiter sampler on ROCm (lazy import, sampling-only).
+(EngineCore pid=383) INFO 03-25 23:17:18 [gpu_model_runner.py:4723] Starting to load model Qwen/Qwen3.5-122B-A10B-FP8...
+(EngineCore pid=383) INFO 03-25 23:17:18 [rocm.py:532] Using AITER Flash Attention backend for ViT model.
+(EngineCore pid=383) WARNING 03-25 23:17:18 [activation.py:643] [ROCm] PyTorch's native GELU with tanh approximation is unstable. Falling back to GELU(approximate='none').
+(EngineCore pid=383) INFO 03-25 23:17:18 [mm_encoder_attention.py:230] Using AttentionBackendEnum.ROCM_AITER_FA for MMEncoderAttention.
+(EngineCore pid=383) INFO 03-25 23:17:18 [__init__.py:261] Selected ChannelWiseTorchFP8ScaledMMLinearKernel for Fp8LinearMethod
+(EngineCore pid=383) INFO 03-25 23:17:18 [qwen3_next.py:202] Using Triton/FLA GDN prefill kernel
+(EngineCore pid=383) INFO 03-25 23:17:18 [fp8.py:266] Using AITER Fp8 MoE backend out of potential backends: ['AITER', 'FLASHINFER_TRTLLM', 'FLASHINFER_CUTLASS', 'DEEPGEMM', 'VLLM_CUTLASS', 'TRITON', 'MARLIN', 'BATCHED_DEEPGEMM', 'BATCHED_VLLM_CUTLASS', 'BATCHED_TRITON', 'XPU'].
+(EngineCore pid=383) INFO 03-25 23:17:19 [rocm.py:494] Using ROCM_AITER_FA attention backend out of potential backends: ['ROCM_AITER_FA', 'TRITON_ATTN'].
+(EngineCore pid=383) WARNING 03-25 23:17:19 [compilation.py:1180] Op 'rms_norm' not present in model, enabling with '+rms_norm' has no effect
+(EngineCore pid=383) WARNING 03-25 23:17:19 [compilation.py:1180] Op 'grouped_topk' not present in model, enabling with '+grouped_topk' has no effect
+(EngineCore pid=383) WARNING 03-25 23:17:19 [compilation.py:1180] Op 'sparse_attn_indexer' not present in model, enabling with '+sparse_attn_indexer' has no effect
+Loading safetensors checkpoint shards:   0% Completed | 0/39 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:   3% Completed | 1/39 [00:03<02:26,  3.87s/it]
+...
+Loading safetensors checkpoint shards: 100% Completed | 39/39 [01:17<00:00,  1.12s/it]
+Loading safetensors checkpoint shards: 100% Completed | 39/39 [01:17<00:00,  1.98s/it]
+(EngineCore pid=383) 
+(EngineCore pid=383) INFO 03-25 23:18:36 [default_loader.py:384] Loading weights took 77.25 seconds
+(EngineCore pid=383) INFO 03-25 23:18:37 [fp8.py:560] Using MoEPrepareAndFinalizeNoDPEPModular
+(EngineCore pid=383) INFO 03-25 23:18:38 [gpu_model_runner.py:4808] Model loading took 118.51 GiB memory and 79.918983 seconds
+(EngineCore pid=383) INFO 03-25 23:18:45 [backends.py:1051] Using cache directory: /root/.cache/vllm/torch_compile_cache/47edb1ffca/rank_0_0/backbone for vLLM's torch.compile
+(EngineCore pid=383) INFO 03-25 23:18:45 [backends.py:1111] Dynamo bytecode transform time: 6.59 s
+(EngineCore pid=383) INFO 03-25 23:18:50 [backends.py:372] Cache the graph of compile range (1, 32768) for later use
+(EngineCore pid=383) INFO 03-25 23:20:14 [backends.py:390] Compiling a graph for compile range (1, 32768) takes 87.88 s
+(EngineCore pid=383) [aiter] start build [module_quant] under /usr/local/lib/python3.12/dist-packages/aiter/jit/build/module_quant
+(EngineCore pid=383) INFO:aiter:start build [module_quant] under /usr/local/lib/python3.12/dist-packages/aiter/jit/build/module_quant
+(EngineCore pid=383) [aiter] finish build [module_quant], cost 41.7s 
+(EngineCore pid=383) INFO:aiter:finish build [module_quant], cost 41.7s 
+(EngineCore pid=383) [aiter] import [module_quant] under /usr/local/lib/python3.12/dist-packages/aiter/jit/module_quant.so
+(EngineCore pid=383) INFO:aiter:import [module_quant] under /usr/local/lib/python3.12/dist-packages/aiter/jit/module_quant.so
+(EngineCore pid=383) [aiter] merge tuned file under model_configs/ and configs/ /usr/local/lib/python3.12/dist-packages/aiter/configs/a8w8_blockscale_tuned_gemm.csv:/usr/local/lib/python3.12/dist-packages/aiter/configs/model_configs/a8w8_blockscale_tuned_gemm_ds_v3.csv:/usr/local/lib/python3.12/dist-packages/aiter/configs/model_configs/a8w8_blockscale_tuned_gemm_qwen3_235b.csv
+(EngineCore pid=383) INFO:aiter:merge tuned file under model_configs/ and configs/ /usr/local/lib/python3.12/dist-packages/aiter/configs/a8w8_blockscale_tuned_gemm.csv:/usr/local/lib/python3.12/dist-packages/aiter/configs/model_configs/a8w8_blockscale_tuned_gemm_ds_v3.csv:/usr/local/lib/python3.12/dist-packages/aiter/configs/model_configs/a8w8_blockscale_tuned_gemm_qwen3_235b.csv
+(EngineCore pid=383) [aiter] start build [module_gemm_common] under /usr/local/lib/python3.12/dist-packages/aiter/jit/build/module_gemm_common
+(EngineCore pid=383) INFO:aiter:start build [module_gemm_common] under /usr/local/lib/python3.12/dist-packages/aiter/jit/build/module_gemm_common
+EngineCore pid=383) [aiter] finish build [module_gemm_common], cost 30.2s 
+(EngineCore pid=383) INFO:aiter:finish build [module_gemm_common], cost 30.2s 
+(EngineCore pid=383) [aiter] import [module_gemm_common] under /usr/local/lib/python3.12/dist-packages/aiter/jit/module_gemm_common.so
+(EngineCore pid=383) INFO:aiter:import [module_gemm_common] under /usr/local/lib/python3.12/dist-packages/aiter/jit/module_gemm_common.so
+(EngineCore pid=383) [aiter] shape is M:32768, N:20480, K:3072, not found tuned config in /tmp/aiter_configs/a8w8_blockscale_tuned_gemm.csv, will use default config!
+(EngineCore pid=383) INFO:aiter:shape is M:32768, N:20480, K:3072, not found tuned config in /tmp/aiter_configs/a8w8_blockscale_tuned_gemm.csv, will use default config!
+(EngineCore pid=383) [aiter] start build [module_gemm_a8w8_blockscale] under /usr/local/lib/python3.12/dist-packages/aiter/jit/build/module_gemm_a8w8_blockscale
+(EngineCore pid=383) INFO:aiter:start build [module_gemm_a8w8_blockscale] under /usr/local/lib/python3.12/dist-packages/aiter/jit/build/module_gemm_a8w8_blockscale
+(EngineCore pid=383) [aiter] finish build [module_gemm_a8w8_blockscale], cost 116.0s 
+(EngineCore pid=383) INFO:aiter:finish build [module_gemm_a8w8_blockscale], cost 116.0s 
+(EngineCore pid=383) [aiter] import [module_gemm_a8w8_blockscale] under /usr/local/lib/python3.12/dist-packages/aiter/jit/module_gemm_a8w8_blockscale.so
+(EngineCore pid=383) INFO:aiter:import [module_gemm_a8w8_blockscale] under /usr/local/lib/python3.12/dist-packages/aiter/jit/module_gemm_a8w8_blockscale.so
+(EngineCore pid=383) /usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fla/ops/utils.py:113: UserWarning: Input tensor shape suggests potential format mismatch: seq_len (16) < num_heads (64). This may indicate the inputs were passed in head-first format [B, H, T, ...] when head_first=False was specified. Please verify your input tensor format matches the expected shape [B, T, H, ...].
+(EngineCore pid=383)   return fn(*contiguous_args, **contiguous_kwargs)
+(EngineCore pid=383) /usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fla/ops/utils.py:113: UserWarning: Input tensor shape suggests potential format mismatch: seq_len (32) < num_heads (64). This may indicate the inputs were passed in head-first format [B, H, T, ...] when head_first=False was specified. Please verify your input tensor format matches the expected shape [B, T, H, ...].
+(EngineCore pid=383)   return fn(*contiguous_args, **contiguous_kwargs)
+(EngineCore pid=383) [aiter] shape is M:32768, N:3072, K:8192, not found tuned config in /tmp/aiter_configs/a8w8_blockscale_tuned_gemm.csv, will use default config!
+(EngineCore pid=383) INFO:aiter:shape is M:32768, N:3072, K:8192, not found tuned config in /tmp/aiter_configs/a8w8_blockscale_tuned_gemm.csv, will use default config!
+(EngineCore pid=383) [aiter] shape is M:32768, N:2048, K:3072, not found tuned config in /tmp/aiter_configs/a8w8_blockscale_tuned_gemm.csv, will use default config!
+(EngineCore pid=383) INFO:aiter:shape is M:32768, N:2048, K:3072, not found tuned config in /tmp/aiter_configs/a8w8_blockscale_tuned_gemm.csv, will use default config!
+(EngineCore pid=383) [aiter] shape is M:32768, N:3072, K:1024, not found tuned config in /tmp/aiter_configs/a8w8_blockscale_tuned_gemm.csv, will use default config!
+(EngineCore pid=383) INFO:aiter:shape is M:32768, N:3072, K:1024, not found tuned config in /tmp/aiter_configs/a8w8_blockscale_tuned_gemm.csv, will use default config!
+(EngineCore pid=383) [aiter] start build [module_moe_asm] under /usr/local/lib/python3.12/dist-packages/aiter/jit/build/module_moe_asm
+(EngineCore pid=383) INFO:aiter:start build [module_moe_asm] under /usr/local/lib/python3.12/dist-packages/aiter/jit/build/module_moe_asm
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:13: Pandas4Warning: 'future.no_silent_downcasting' is deprecated, please refrain from using it.
+  pd.set_option("future.no_silent_downcasting", True)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:13: Pandas4Warning: 'future.no_silent_downcasting' is deprecated, please refrain from using it.
+  pd.set_option("future.no_silent_downcasting", True)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:13: Pandas4Warning: 'future.no_silent_downcasting' is deprecated, please refrain from using it.
+  pd.set_option("future.no_silent_downcasting", True)
+/usr/local/lib/python3.12/dist-packages/aiter_meta/hsa/codegen.py:86: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  pd.concat(dfs, ignore_index=True).fillna(0).infer_objects(copy=False)
+(EngineCore pid=383) [aiter] finish build [module_moe_asm], cost 48.8s 
+(EngineCore pid=383) INFO:aiter:finish build [module_moe_asm], cost 48.8s 
+(EngineCore pid=383) [aiter] import [module_moe_asm] under /usr/local/lib/python3.12/dist-packages/aiter/jit/module_moe_asm.so
+(EngineCore pid=383) INFO:aiter:import [module_moe_asm] under /usr/local/lib/python3.12/dist-packages/aiter/jit/module_moe_asm.so
+(EngineCore pid=383) [aiter] merge tuned file under model_configs/ and configs/ /usr/local/lib/python3.12/dist-packages/aiter/configs/tuned_fmoe.csv:/usr/local/lib/python3.12/dist-packages/aiter/configs/model_configs/a8w8_blockscale_tuned_fmoe_qwen3_235b.csv
+(EngineCore pid=383) INFO:aiter:merge tuned file under model_configs/ and configs/ /usr/local/lib/python3.12/dist-packages/aiter/configs/tuned_fmoe.csv:/usr/local/lib/python3.12/dist-packages/aiter/configs/model_configs/a8w8_blockscale_tuned_fmoe_qwen3_235b.csv
+(EngineCore pid=383) [aiter] run_1stage = True, ksplit = 0 q_type = QuantType.per_1x128 block_m = 32 use_nt = False, estimated_m_per_expert = 512
+(EngineCore pid=383) INFO:aiter:run_1stage = True, ksplit = 0 q_type = QuantType.per_1x128 block_m = 32 use_nt = False, estimated_m_per_expert = 512
+(EngineCore pid=383) [aiter] [fused_moe] using 1stage default for (304, 16384, 3072, 1024, 256, 8, 'ActivationType.Silu', 'torch.bfloat16', 'torch.float8_e4m3fnuz', 'torch.float8_e4m3fnuz', 'QuantType.per_1x128', True, False) 
+(EngineCore pid=383) INFO:aiter:[fused_moe] using 1stage default for (304, 16384, 3072, 1024, 256, 8, 'ActivationType.Silu', 'torch.bfloat16', 'torch.float8_e4m3fnuz', 'torch.float8_e4m3fnuz', 'QuantType.per_1x128', True, False) 
+(EngineCore pid=383) [aiter] start build [module_moe_sorting] under /usr/local/lib/python3.12/dist-packages/aiter/jit/build/module_moe_sorting
+(EngineCore pid=383) INFO:aiter:start build [module_moe_sorting] under /usr/local/lib/python3.12/dist-packages/aiter/jit/build/module_moe_sorting
+...missed some logs...
+(APIServer pid=1) INFO 03-25 23:31:05 [base.py:213] Multi-modal warmup completed in 6.406s
+(APIServer pid=1) INFO 03-25 23:31:05 [api_server.py:594] Starting vLLM server on http://0.0.0.0:8000
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:37] Available routes are:
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /openapi.json, Methods: HEAD, GET
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /docs, Methods: HEAD, GET
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /redoc, Methods: HEAD, GET
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /tokenize, Methods: POST
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /detokenize, Methods: POST
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /load, Methods: GET
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /version, Methods: GET
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /health, Methods: GET
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /metrics, Methods: GET
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /v1/models, Methods: GET
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /ping, Methods: GET
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /ping, Methods: POST
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /invocations, Methods: POST
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /v1/responses, Methods: POST
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /v1/completions, Methods: POST
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /v1/messages, Methods: POST
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /v1/messages/count_tokens, Methods: POST
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+(APIServer pid=1) INFO 03-25 23:31:05 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+(APIServer pid=1) INFO:     Started server process [1]
+(APIServer pid=1) INFO:     Waiting for application startup.
+(APIServer pid=1) INFO:     Application startup complete.
+(APIServer pid=1) INFO:     184.58.49.55:63448 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=1) INFO:     184.58.49.55:63449 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=1) INFO:     184.58.49.55:63450 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=1) INFO:     184.58.49.55:63453 - "GET /metrics HTTP/1.1" 200 OK
+(EngineCore pid=383) /usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fla/ops/utils.py:113: UserWarning: Input tensor shape suggests potential format mismatch: seq_len (19) < num_heads (64). This may indicate the inputs were passed in head-first format [B, H, T, ...] when head_first=False was specified. Please verify your input tensor format matches the expected shape [B, T, H, ...].
+(EngineCore pid=383)   return fn(*contiguous_args, **contiguous_kwargs)
+(EngineCore pid=383) [aiter] start build [mha_varlen_fwd_bf16_nlogits_nbias_mask_nlse_ndropout_skip_nqscale] under /usr/local/lib/python3.12/dist-packages/aiter/jit/build/mha_varlen_fwd_bf16_nlogits_nbias_mask_nlse_ndropout_skip_nqscale
+(EngineCore pid=383) INFO:aiter:start build [mha_varlen_fwd_bf16_nlogits_nbias_mask_nlse_ndropout_skip_nqscale] under /usr/local/lib/python3.12/dist-packages/aiter/jit/build/mha_varlen_fwd_bf16_nlogits_nbias_mask_nlse_ndropout_skip_nqscale

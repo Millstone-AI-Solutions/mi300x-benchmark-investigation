@@ -1,0 +1,52 @@
+services:
+  sglang:
+    image: lmsysorg/sglang:v0.5.9-rocm700-mi30x
+    container_name: sglang-server
+    ports:
+      - "8000:8000"
+    ipc: host
+    ulimits:
+      memlock: -1
+      stack: 67108864
+    shm_size: "32g"
+    devices:
+      - /dev/kfd:/dev/kfd
+      - /dev/dri:/dev/dri
+    group_add:
+      - video
+      - render
+    security_opt:
+      - seccomp:unconfined
+    cap_add:
+      - SYS_PTRACE
+    volumes:
+      - /data/models/huggingface:/root/.cache/huggingface
+    command: >
+      python3 -m sglang.launch_server
+      --model-path Qwen/Qwen3.5-122B-A10B-FP8
+      --host 0.0.0.0
+      --port 8000
+      --served-model-name Qwen3.5-122B-A10B-FP8
+      --attention-backend triton
+      --reasoning-parser qwen3
+      --trust-remote-code
+      --mem-fraction-static 0.85
+      --context-length 262144
+      --enable-metrics
+    restart: unless-stopped
+
+
+  amd-metrics-exporter:
+    image: rocm/device-metrics-exporter:v1.4.2
+    container_name: amd-metrics-exporter
+    ports:
+      - "9400:5000"
+    devices:
+      - /dev/kfd:/dev/kfd
+      - /dev/dri:/dev/dri
+    group_add:
+      - video
+      - render
+    security_opt:
+      - seccomp:unconfined
+    restart: unless-stopped
